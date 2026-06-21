@@ -1,6 +1,6 @@
 # Task Architect
 
-A small Python workspace for two related tasks:
+A small Rag workspace for two related tasks:
 
 - Extract structured tasks from messy text with a FastAPI endpoint.
 - Ingest PDFs into a local ChromaDB store and ask grounded questions over them.
