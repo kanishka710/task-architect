@@ -1,15 +1,19 @@
 import os
-import google.generativeai as genai
+from google import genai
 from dotenv import load_dotenv
 
-# Load the key from your .env file
 load_dotenv()
 api_key = os.getenv("GEMINI_API_KEY")
 
-# Configure the AI
-genai.configure(api_key=api_key)
-model = genai.GenerativeModel('gemini-3-flash-preview')
+client = genai.Client(api_key=api_key)
 
-# Simple test prompt
-response = model.generate_content("Say 'System Online' if you can hear me.")
-print(f"AI Response: {response.text}")
+def run_connection_test():
+	response = client.models.generate_content(
+		model="gemini-3-flash-preview",
+		contents="Say 'System Online' if you can hear me.",
+	)
+	print(f"AI Response: {response.text}")
+
+
+if __name__ == "__main__":
+	run_connection_test()
