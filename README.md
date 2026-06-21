@@ -86,12 +86,3 @@ python test_ai.py
 - Re-running ingestion is safe with the current chunk ID strategy.
 - If no relevant documents are found during querying, the script exits gracefully.
 
-## Validation
-
-The current codebase was checked with:
-
-```bash
-python -m compileall main.py ingest.py query.py check_db.py test_ai.py
-```
-
-and the local database inspection script was run successfully with the workspace virtualenv interpreter.
